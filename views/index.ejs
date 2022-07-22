@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/header.ejs')%>
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <div class="blogs content">
+            <h2>All Blogs</h2>
+           <% if(blogs.length>0){%>
+            <%blogs.forEach(blog=>{%>         <%/*%>  multiline comment  This is multiline comment in ejs code<%*/%>
+               
+         
+                <a  class="single"  href="/blogs/inner/<%= blog._id %>">
+              
+                <h3 class="title"><%=blog.title%></h3>   <%#dynamic variable is  place inside the ejs tags . This is a single line comment in ejs code%>
+                <p class="snippet"><%=blog.snippet%></p>
+
+            </a>
+
+          <%  })%>
+          <%  }  else {%>
+            <p>There are no blogs to display...</p>
+         <% }%>
+
+         <%- include('./partials/footer.ejs') %>
+</body>
+</html>
